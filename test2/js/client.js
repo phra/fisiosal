@@ -1,1 +1,7 @@
-$(document).ready(function() {new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ))});
+$('document').ready(function () {
+    'use strict';
+
+    alert("dom ready.");
+    new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger'));
+
+});
