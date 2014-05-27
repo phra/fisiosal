@@ -27,7 +27,7 @@
     <noscript>Attiva JavaScript per visualizzare il sito correttamente!</noscript>
     <script type="text/javascript" src="js/modernizr.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <!--[if lt IE 9]>
+    <!--[if lte IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
     
@@ -46,7 +46,7 @@
                 <div class="mp-level">
                     <h2 class="icon icon-menu2">Menù</h2>
                     <ul>
-                        <li><a class="icon icon-home" href="#">Home</a>
+                        <li><a class="icon icon-home" href=".">Home</a>
                         </li>
                         <li class="icon icon-arrow-left">
                             <a class="icon icon-anchor" href="#">Haloterapia</a>
@@ -175,9 +175,9 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a class="icon icon-photo" href="#">Chi siamo</a>
+                        <li><a id="chisiamo" class="icon icon-photo" href="#">Chi siamo</a>
                         </li>
-                        <li><a class="icon icon-newspaper" href="#">Contatti</a>
+                        <li><a id="contatti" class="icon icon-newspaper" href="#">Contatti</a>
                         </li>
                     </ul>
 
@@ -206,9 +206,11 @@
 								</nav-->
                         </div>
                         <div class="block block-60">
+                            <div id="container">
                             <p><strong>lorem ipsum</strong>
                             </p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
                         </div>
                         <!--div class="info">
 								<p>If you enjoyed this you might also like:</p>
@@ -225,12 +227,13 @@
         <!-- /pusher -->
     </div>
     <!-- /container -->
+    <script type="text/javascript" src="js/classie.js"></script>
         <script type="text/javascript">
         Modernizr.load({
-            load: ['js/classie.js', 'js/mlpushmenu.js','js/client.js'],
             test: Modernizr.csstransforms3d,
-            yep: 'js/new.js',
-            nope: 'js/old.js'
+            yep: ['js/mlpushmenu.js', 'js/new.js'],
+            nope: 'js/old.js',
+            both: 'js/client.js'
         });
     </script>
 </body>

@@ -1,7 +1,8 @@
 $('document').ready(function () {
-    'use strict';
+    $.ajaxSetup({ cache: false });
+    $("#chisiamo").click(function () {
+        $("#container").load("static/chisiamo.html");
+        $("#container").click();
 
-    alert("dom ready.");
-    new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger'));
-
+    });
 });
