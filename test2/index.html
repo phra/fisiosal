@@ -189,7 +189,7 @@
                 <!-- this is for emulating position fixed of the nav -->
                 <div class="scroller-inner">
                     <!-- Top Navigation -->
-                    <div class="codrops-top clearfix">
+                    <div id="menutop" class="codrops-top clearfix">
                         <a class="icon icon-arrow-left" href="#" id="trigger"><span>Apri menù</span></a>
                         <!--span class="right"><a class="codrops-icon codrops-icon-drop" ><span></span></a></span-->
                     </div>
@@ -232,7 +232,7 @@
         Modernizr.load({
             test: Modernizr.csstransforms3d,
             yep: ['js/mlpushmenu.js', 'js/new.js'],
-            nope: 'js/old.js',
+            nope: ['js/old.js', 'css/iefix.css'],
             both: 'js/client.js'
         });
     </script>

@@ -1,1 +1,1 @@
-alert("non hai il supporto per csstransform3d");
+//alert("non hai il supporto per csstransform3d");
