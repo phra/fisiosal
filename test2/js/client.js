@@ -2,6 +2,7 @@ $('document').ready(function () {
     /*$.ajaxSetup({
         cache: false
     });*/
+
     var resetMap = function () {
         $("#containermaps").hide();
     }
@@ -9,13 +10,17 @@ $('document').ready(function () {
     var showMap = function () {
         $("#containermaps").show();
     }
-
-    var caricaHome = function () {
-        $("#container").load("static/home.html");
+    
+    var resetContainer = function () {
+        $(".block .container").hide();
     }
 
-    //$("#containermaps").load("static/maps.html");
-    caricaHome();
-
-
+    var caricaHome = function () {
+        resetContainer();
+        $("#container").load("static/home.html");
+    }
+    
+    //resetContainer();
+    
 });
+

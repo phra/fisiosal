@@ -201,6 +201,8 @@
                                 </ul>
                             </div>
                         </li>
+                        <li><a id="gallery" class="icon icon-screen" href="#">Gallery</a>
+                        </li>
                         <li><a id="chisiamo" class="icon icon-photo" href="#">Chi siamo</a>
                         </li>
                         <li><a id="contatti" class="icon icon-newspaper" href="#">Contatti</a>
@@ -215,9 +217,9 @@
                 <!-- this is for emulating position fixed of the nav -->
                 <div class="scroller-inner">
                     <!-- Top Navigation -->
+                    
                     <div id="menutop" class="codrops-top clearfix">
                         <a class="icon icon-arrow-left" href="#" id="trigger"><span>Apri menù</span></a>
-                        <!--span class="right"><a class="codrops-icon codrops-icon-drop" ><span></span></a></span-->
                     </div>
                     <header class="codrops-header">
                         <h1>FISIO<br>SAL<span>Fisioterapia ed Haloterapia</span></h1>
@@ -245,13 +247,12 @@
         <!-- /pusher -->
     </div>
     <!-- /container -->
-
     <script type="text/javascript">
         Modernizr.load({
             test: Modernizr.csstransforms3d,
             yep: ['js/mlpushmenu.js', 'js/new.js'],
             nope: ['js/old.js', 'css/iefix.css'],
-            both: 'js/client.js'
+            both: ['js/client.js', 'js/jssor.slider.mini.js']
         });
     </script>
 </body>
