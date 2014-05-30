@@ -19,11 +19,6 @@ html, body, .container, .scroller {
 	position: relative;
 }
 
-.container {
-	position: relative;
-	overflow: hidden;
-	background: #34495e;
-}
 
 .menu-trigger {
 	position: relative;

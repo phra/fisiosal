@@ -50,12 +50,7 @@ a:hover, a:focus {
 	text-align: center;
 }
 
-.codrops-header h1 {
-	margin: 0;
-	font-weight: 300;
-	font-size: 2.625em;
-	line-height: 1.3;
-}
+
 
 .codrops-header span {
 	display: block;

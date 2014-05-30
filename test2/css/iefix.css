@@ -1,7 +1,6 @@
-#menutop{
+#menutop {
     display: none !important;
 }
-
 .icon-arrow-left:before {
-	content: "";
+    content: "";
 }
