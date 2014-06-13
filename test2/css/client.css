@@ -78,9 +78,59 @@ footer a {} #slider1_container {
     padding-top: 1em;
 }
 #galleria {
-    height: 40em;
+    height: 39em;
     width: auto;
 }
 #galleria img {
     display: none;
+}
+@media screen and (max-height: 720px) {
+    .mp-menu ul li > a {
+        padding: 0.4em 1em 0.4em 1.8em;
+    }
+    .mp-menu h2 {
+        padding: 0.5em;
+    }
+    #galleria {
+        height: 20em;
+    }
+    h2 {
+        line-height: 1em;
+        padding-top: 0.5em;
+        padding-bottom: 1em;
+    }
+    h1 {
+        font-size: 3.625em;
+        line-height: 0.9;
+    }
+    body *> .container ul li {
+        margin: -10px;
+    }
+    .block p {
+        margin: 0;
+        padding: 0 1em 0.6em;
+        font-size: 1.4em;
+        line-height: 1.2;
+    }
+}
+@media screen and (max-height: 400px) {
+    .mp-menu ul li > a {
+        padding: 0.1em 1em 0.1em 1.8em;
+    }
+    .mp-menu h2 {
+        padding: 0.2em;
+    }
+    #galleria {
+        height: 10em;
+    }
+    h1 {
+        font-size: 2.625em;
+        line-height: 0.8;
+    }
+    .block p {
+        margin: 0;
+        padding: 0 1em 0.6em;
+        font-size: 1.2em;
+        line-height: 0.8;
+    }
 }
