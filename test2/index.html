@@ -45,6 +45,9 @@
     <script type="text/javascript" src="js/modernizr.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="js/classie.js"></script>
+    <!--script type="text/javascript" src="js/jquery.slides.min.js"></script-->
+    
+    
     <!--[if lte IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <script type="text/javascript" src="js/sandpaper/EventHelpers.js">
@@ -229,7 +232,7 @@
                         <a class="icon icon-arrow-left" href="#" id="trigger"><span>Apri menù</span></a>
                     </div>
                     <header class="codrops-header">
-                        <h1>FISIO<br>SAL<span>Fisioterapia ed Haloterapia</span></h1>
+                        <div id="titlecontainer"> <h1>FISIO<br>SAL<span>Fisioterapia ed Haloterapia</span></h1></div>
                     </header>
 
                     <div class="block block-60">
@@ -238,6 +241,7 @@
                         <div class="container" id="container2"></div>
                         <div class="container" id="container3"></div>
                         <div class="container" id="container4"></div>
+
 
                     </div>
                     <!--div class="info">
@@ -262,9 +266,10 @@
             test: Modernizr.csstransforms3d,
             yep: ['js/mlpushmenu.js', 'js/new.js'],
             nope: ['js/old.js', 'css/iefix.css'],
-            both: ['js/client.js', 'js/jssor.slider.mini.js']
+            both: ['js/client.js','js/galleria/galleria-1.3.5.min.js']
         });
     </script>
+
 </body>
 
 </html>

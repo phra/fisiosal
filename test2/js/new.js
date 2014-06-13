@@ -21,35 +21,45 @@ $('document').ready(function () {
 
     $("#caratteristichestanza").click(function () {
         $("#container").fadeOut("fast", function () {
-            $("#container").load("static/caratteristichestanza.html").fadeIn("slow");
+            $("#container").load("static/caratteristichestanza.html", function () {
+                $("#container").fadeIn("slow");
+            });
         });
         chiudiMenu();
     });
 
     $("#proprietastanza").click(function () {
         $("#container").fadeOut("fast", function () {
-            $("#container").load("static/proprieta.html").fadeIn("slow");
+            $("#container").load("static/proprieta.html", function () {
+                $("#container").fadeIn("slow");
+            });
         });
         chiudiMenu();
     });
 
     $("#regolamento").click(function () {
         $("#container").fadeOut("fast", function () {
-            $("#container").load("static/regolamento.html").fadeIn("slow");
+            $("#container").load("static/regolamento.html", function () {
+                $("#container").fadeIn("slow");
+            });
         });
         chiudiMenu();
     });
 
     $("#caratteristicheginnastica").click(function () {
         $("#container").fadeOut("fast", function () {
-            $("#container").load("static/caratteristicheginnastica.html").fadeIn("slow");
+            $("#container").load("static/caratteristicheginnastica.html", function () {
+                $("#container").fadeIn("slow");
+            });
         });
         chiudiMenu();
     });
 
     $("#finalitaginnastica").click(function () {
         $("#container").fadeOut("fast", function () {
-            $("#container").load("static/finalitaginnastica.html").fadeIn("slow");
+            $("#container").load("static/finalitaginnastica.html", function () {
+                $("#container").fadeIn("slow");
+            });
         });
         chiudiMenu();
     });
@@ -61,28 +71,34 @@ $('document').ready(function () {
 
     $("#chisiamo").click(function () {
         $("#container").fadeOut("fast", function () {
-            $("#container").load("static/chisiamo.html").fadeIn("slow");
+            $("#container").load("static/chisiamo.html", function () {
+                $("#container").fadeIn("slow");
+            });
         });
         chiudiMenu();
     });
 
     $("#contatti").click(function () {
         $("#container").fadeOut("fast", function () {
-            $("#container").load("static/contatti.html").fadeIn("slow");
+            $("#container").load("static/contatti.html", function () {
+                $("#container").fadeIn("slow");
+            });
         });
         chiudiMenu();
     });
 
     $("#gallery").click(function () {
-
         $("#container").fadeOut("fast", function () {
             $("#container").load("static/gallery.html", function () {
-                var options = {
-                    $AutoPlay: true
-                };
-                var jssor_slider1 = new $JssorSlider$('slider1_container', options);
-            })
-        }).fadeIn("slow");
+                $("#container").fadeIn("slow");
+                Galleria.loadTheme('js/galleria/themes/classic/galleria.classic.min.js');
+                Galleria.configure({
+                    imageCrop: false,
+                    transition: 'fade'
+                });
+                Galleria.run('#galleria');
+            });
+        });
         chiudiMenu();
     });
 });

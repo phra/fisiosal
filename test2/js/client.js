@@ -10,7 +10,7 @@ $('document').ready(function () {
     var showMap = function () {
         $("#containermaps").show();
     }
-    
+
     var resetContainer = function () {
         $(".block .container").hide();
     }
@@ -19,8 +19,7 @@ $('document').ready(function () {
         resetContainer();
         $("#container").load("static/home.html");
     }
-    
-    //resetContainer();
-    
-});
 
+    //resetContainer();
+
+});
