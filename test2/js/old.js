@@ -67,22 +67,13 @@ $('document').ready(function () {
     $("#gallery").click(function () {
         resetContainer();
         $("#container").load("static/gallery.html", function () {
-            var options = {
-                $AutoPlay: true
-            };
-            //var jssor_slider1 = new $JssorSlider$('slider1_container', options);
             $("#container").show();
-            $('#slides').slidesjs({
-                width: 940,
-                height: 528,
-                play: {
-                    active: true,
-                    auto: true,
-                    interval: 4000,
-                    swap: true
-                }
+            Galleria.loadTheme('js/galleria/themes/classic/galleria.classic.min.js');
+            Galleria.configure({
+                imageCrop: false,
+                transition: 'fade'
             });
-            
+            Galleria.run('#galleria');
         });
     });
 });
