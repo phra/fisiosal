@@ -25,11 +25,14 @@ $('document').ready(function () {
         });
     }
 
-    var hideMenu = function () {
-        pushmenu._hideMenu();
-    }
+    
 
     var closeMenu = function () {
+        pushmenu._resetMenu();
+    }
+    
+    var hideMenu = function () {
+        //pushmenu._hideMenu();
         pushmenu._resetMenu();
     }
 
