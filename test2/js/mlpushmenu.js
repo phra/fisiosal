@@ -81,6 +81,7 @@
 		_init : function() {
 			// if menu is open or not
 			this.open = false;
+            this.open1 = false;
 			// level depth
 			this.level = 0;
 			// the moving wrapper
@@ -106,7 +107,8 @@
 
 			// the menu should close if clicking somewhere on the body
 			var bodyClickFn = function( el ) {
-				self._resetMenu();
+                if (self.open1) self._hideMenu();
+                else self._resetMenu();
 				el.removeEventListener( self.eventtype, bodyClickFn );
 			};
 
@@ -115,7 +117,8 @@
 				ev.stopPropagation();
 				ev.preventDefault();
 				if( self.open ) {
-					self._resetMenu();
+                    if (self.open1) self._hideMenu();
+                else self._resetMenu();
 				}
 				else {
 					self._openMenu();
@@ -174,6 +177,7 @@
 		_openMenu : function( subLevel ) {
 			// increment level depth
 			++this.level;
+            if (this.open1) ++this.level;
 
 			// move the main wrapper
 			var levelFactor = ( this.level - 1 ) * this.options.levelSpacing,
@@ -195,8 +199,9 @@
 			// add class mp-pushed to main wrapper if opening the first time
 			if( this.level === 1 ) {
 				classie.add( this.wrapper, 'mp-pushed' );
-				this.open = true;
+				
 			}
+            this.open = true;
 			// add class mp-level-open to the opening level element
 			classie.add( subLevel || this.levels[0], 'mp-level-open' );
 		},
@@ -208,12 +213,23 @@
 			classie.remove( this.wrapper, 'mp-pushed' );
 			this._toggleLevels();
 			this.open = false;
+            this.open1 = false;
+		},
+        _hideMenu : function() {
+			this._setTransform('translate3d(0,0,0)');
+			this.level = 0;
+			// remove class mp-pushed from main wrapper
+			classie.remove( this.wrapper, 'mp-pushed' );
+			//this._toggleLevels();
+			this.open = false;
+            this.open1 = true;
 		},
 		// close sub menus
 		_closeMenu : function() {
 			var translateVal = this.options.type === 'overlap' ? this.el.offsetWidth + ( this.level - 1 ) * this.options.levelSpacing : this.el.offsetWidth;
 			this._setTransform( 'translate3d(' + translateVal + 'px,0,0)' );
 			this._toggleLevels();
+            this.open1 = false;
 		},
 		// translate the el
 		_setTransform : function( val, el ) {

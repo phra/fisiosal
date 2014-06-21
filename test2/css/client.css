@@ -28,6 +28,10 @@ p {
     margin-left: auto;
     margin-right: auto;
 }
+.center p {
+    margin-top: -1em;
+    text-align: center !important;
+}
 iframe {
     display: block;
     margin: 0 auto;
@@ -59,9 +63,7 @@ footer {
     padding-top: 4em;
     padding-left: 4em;
 }
-footer a {} #slider1_container {
-    margin: 0 auto;
-    padding-top: 1em;
+footer a { 
 }
 #galleria {
     height: 39em;
@@ -74,7 +76,47 @@ body *> .container ul li {
     margin: -10px;
 }
 #containermaps {
+    margin-top: 3em;
+}
+h3 {
     margin: 0 auto;
+    font-weight: 300;
+    font-size: 2.625em;
+    line-height: 1;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+}
+.block *> p span {
+    float: right;
+}
+h4 {
+    margin: 0 auto;
+    font-weight: 300;
+    font-size: 2.625em;
+    line-height: 1;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.block *> ul li {
+    padding-bottom: 1em;
+}
+.block *> ul li:last-child {
+    padding-bottom: 3em;
+}
+.mp-menu h2 {
+    color: #59cccc;
+}
+.block *> ul li ul {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 5em;
+}
+details {
+    display: none !important;
 }
 @media screen and (max-height: 720px) {
     .mp-menu ul li > a {
@@ -98,12 +140,7 @@ body *> .container ul li {
     body *> .container ul li {
         margin: -15px;
     }
-    .block p {
-        margin: 0;
-        padding: 0 1em 0.6em;
-        font-size: 1.4em;
-        line-height: 1.2;
-    }
+
     .block {
         padding: 0.5em;
     }
@@ -124,7 +161,6 @@ body *> .container ul li {
     }
     .block p {
         margin: 0;
-        padding: 0 1em 0.6em;
         font-size: 1.2em;
         line-height: 0.8;
     }
