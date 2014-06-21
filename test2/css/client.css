@@ -102,7 +102,7 @@ h4 {
     margin-bottom: 1em;
 }
 .block *> ul li {
-    padding-bottom: 1em;
+    padding-bottom: 2em;
 }
 .block *> ul li:last-child {
     padding-bottom: 3em;
@@ -116,6 +116,9 @@ h4 {
     padding-left: 5em;
 }
 details {
+    display: none !important;
+}
+details summary {
     display: none !important;
 }
 @media screen and (max-height: 720px) {
