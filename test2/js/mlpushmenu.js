@@ -84,6 +84,7 @@
         _init: function () {
             // if menu is open or not
             this.open = false;
+            this.open1 = false;
             // level depth
             this.level = 0;
             // the moving wrapper
@@ -123,6 +124,7 @@
                     self._resetMenu();
                 } else {
                     self._openMenu();
+                    //if (self.open1) classie.add(this.wrapper, 'mp-pushed');
                     // the menu should close if clicking somewhere on the body (excluding clicks on the menu)
                     document.addEventListener(self.eventtype, function (ev) {
                         if (self.open && !hasParent(ev.target, self.el.id)) {
@@ -178,7 +180,7 @@
         },
         _openMenu: function (subLevel) {
             // increment level depth
-            ++this.level;
+            this.open1? this.level += 2 : ++this.level;
 
             // move the main wrapper
             var levelFactor = (this.level - 1) * this.options.levelSpacing,
@@ -187,6 +189,8 @@
             this._setTransform('translate3d(' + translateVal + 'px,0,0)');
 
             if (subLevel) {
+                this.level = subLevel;
+                
                 // reset transform for sublevel
                 this._setTransform('', subLevel);
                 // need to reset the translate value for the level menus that have the same level depth and are not open
@@ -198,9 +202,10 @@
                 }
             }
             // add class mp-pushed to main wrapper if opening the first time
-            if (this.level === 1) {
+            if (this.level === 1 || (this.level === 2 && this.open1)) {
                 classie.add(this.wrapper, 'mp-pushed');
                 this.open = true;
+                this.open1 = false;
             }
             // add class mp-level-open to the opening level element
             classie.add(subLevel || this.levels[0], 'mp-level-open');
@@ -213,6 +218,16 @@
             classie.remove(this.wrapper, 'mp-pushed');
             this._toggleLevels();
             this.open = false;
+            this.open1 = false;
+        },
+        _hideMenu: function () {
+            this._setTransform('translate3d(0,0,0)');
+            this.level = 0;
+            // remove class mp-pushed from main wrapper
+            classie.remove(this.wrapper, 'mp-pushed');
+            //this._toggleLevels();
+            this.open = false;
+            this.open1 = true;
         },
         // close sub menus
         _closeMenu: function () {

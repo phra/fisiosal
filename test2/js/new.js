@@ -25,15 +25,13 @@ $('document').ready(function () {
         });
     }
 
-    
-
     var closeMenu = function () {
         pushmenu._resetMenu();
     }
     
     var hideMenu = function () {
-        //pushmenu._hideMenu();
-        pushmenu._resetMenu();
+        pushmenu._hideMenu();
+        //pushmenu._resetMenu();
     }
 
     resetContainer();
